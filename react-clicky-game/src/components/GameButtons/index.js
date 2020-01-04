@@ -12,13 +12,11 @@ const GameButton = (props) => {
   )
 }
 
-//create an on click function to handle each click
 class GameButtons extends React.Component{
   state = {
     buttons
   }
 
-//will need to remove the "function" when uncommenting everything else
   render () {
     return(
       <>
