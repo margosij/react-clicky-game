@@ -5,8 +5,8 @@ import buttons from "../../buttons.json"
 const GameButton = (props) => {
   return (
   <div className="card">
-    <button onClick = {props.changeScore} className="img-container">
-      <img alt={props.id} src={props.image} />
+    <button id={props.id} onClick={props.onButtonClick} className="img-container">
+      <img id={props.id} alt={props.id} src={props.image} />
     </button>
   </div>
   )
@@ -20,15 +20,17 @@ class GameButtons extends React.Component{
   render () {
     return(
       <>
-      {this.state.buttons.map(button => (
+      {this.props.buttons.map(button => (
         <GameButton
+        key={button.id}
         id={button.id}
         image={button.image}
+        onButtonClick={this.props.onButtonClick}
           />
       ))}
       </>
     )
-  }    
+  }
 }
 
 export default GameButtons;
